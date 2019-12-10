@@ -1,6 +1,6 @@
 # General
 
-Placeholder to document the Verisure (Securitas Direct) Mobile API Endpoint.
+Placeholder to document the Verisure Europe (Securitas Direct) Mobile API Endpoint.
 
 **_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES.
 
