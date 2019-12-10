@@ -2,7 +2,7 @@
 
 Placeholder to document the Verisure Europe (Securitas Direct) Mobile API Endpoint.
 
-**_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES.
+**_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES. The information here and online is for educational and resource purposes only and therefore I do not endorse or condone any inappropriate use of it.
 
 Known projects:
 
