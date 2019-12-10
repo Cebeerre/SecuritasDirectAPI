@@ -4,6 +4,11 @@ Placeholder to document the Verisure Europe (Securitas Direct) Mobile API Endpoi
 
 **_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES.
 
+Known projects:
+
+* [Home Assistant Component](https://github.com/segalion/securitasdirect)
+* [WEMO/Belkin Emulation](https://github.com/Cebeerre/VerisureEchoDevice)
+
 Verisure does not really use a REST API, it's more a web application that expects variables in a url encoded format, and returns XML documents.
 
 You should maintain a session using a hash, control (some) queries using IDs, and control the execution in the server querying the log on the endpoint periodically for some calls.
