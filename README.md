@@ -134,8 +134,6 @@ Example:
 </PET>
 ```
 
-The content of the HASH tag should be used for any further requests, as it's used as a token.
-
 ## Get Panel Status
 
 In order to get the panel status, you should first do an `EST1` call, and then loop on `EST2`, till the communication with the panel has finished and you get a `<RES>OK</RES>`
