@@ -65,6 +65,8 @@ The content of the HASH tag should be used for any further requests, as it's use
 
 ## Installation Details
 
+Usefull to get the sensor IDs and other info related to your installation.
+
 **Call**: `MYINSTALLATION`
 
 **Method**: `POST`
@@ -88,7 +90,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=LOGIN&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=MYINSTALLATION&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass
 ```
 
 **Success Response**
@@ -99,12 +101,36 @@ Example:
 ```
 <?xml version='1.0' encoding='UTF-8'?>
 <PET>
-    <RES>OK</RES>
-    <MSG>Usuario validado correctamente</MSG>
-    <LANG>ES</LANG>
-    <HASH>11111111111</HASH>
-    <MOBILE newversion='0'/>
-    <BLOQ remotereqactive='1' >Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
+  <RES>OK</RES>
+  <MSG>Petición procesada correctamente</MSG>
+  <INSTALLATION alias=" ">
+    <DEVICES>
+      <DEVICE idDev="1" code="0" alias="Entrada" type="YR" aliasType="Foto detector"/>
+      <DEVICE idDev="2" code="2" alias="Comedor" type="YR" aliasType="Foto detector"/>
+      <DEVICE idDev="3" code="3" alias="Cocina" type="YR" aliasType="Foto detector"/>
+      <DEVICE idDev="4" code="4" alias="Habitacion pepe" type="YR" aliasType="Foto detector"/>
+      <DEVICE idDev="5" code="5" alias="Sala de Tortura" type="YR" aliasType="Foto detector"/>
+      <DEVICE idDev="6" code="6" alias="Cuarto de limpieza" type="YR" aliasType="Foto detector"/>
+    </DEVICES>
+    <CODEWORDS securitas="XXXXX" customer="XXXXX" coercion="XXXXXX"/>
+    <EMAILS>
+      <EMAIL address="XXXXX@XXXXXX.COM" alias="SERVICIOS" language="es_ES" idService="0"/>
+    </EMAILS>
+    <PHONES>
+      <PHONE number="XXXXXXXXX" alias="SERVICIOS" language="es_ES" idService="0"/>
+    </PHONES>
+    <SERVICESATTRIBUTES>
+      <EMAIL>
+        <SERVICE description="Petición de imagen" idservice="1"/>
+        <SERVICE description="Entradas y salidas" idservice="2"/>
+        <SERVICE description="Video petición" idservice="17"/>
+        <SERVICE description="Corte de corriente" idservice="23"/>
+      </EMAIL>
+      <PHONE>
+        <SERVICE description="Accesos SMS" idservice="5"/>
+      </PHONE>
+    </SERVICESATTRIBUTES>
+  </INSTALLATION>
 </PET>
 ```
 
