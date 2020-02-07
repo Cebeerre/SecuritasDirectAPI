@@ -8,6 +8,7 @@ Known projects:
 
 * [Home Assistant Component](https://github.com/segalion/securitasdirect)
 * [WEMO/Belkin Emulation](https://github.com/Cebeerre/VerisureEchoDevice)
+* [WIP Homebridge integration](https://github.com/ptz0n/node-verisure/pull/41)
 
 Verisure does not really use a REST API, it's more a web application that expects variables in a url encoded format, and returns XML documents.
 
@@ -16,6 +17,13 @@ You should maintain a session using a hash, control (some) queries using IDs, an
 ```
 BASE URL = https://mob2217.securitasdirect.es:12010/WebService/ws.do
 ```
+
+Known supported countries: 
+* Spain (country="ES", lang="es")
+* Italy (country="IT", lang="it")
+* France (country="FR", lang="fr")
+* UK (country="GB", lang="en") (only the alarm kit on the [left](https://www.verisure.co.uk/alarms/customer-area.html))
+* Portugal (country="PT", lang="pt")
 
 ## Login
 
