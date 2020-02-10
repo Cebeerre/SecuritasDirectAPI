@@ -18,12 +18,12 @@ You should maintain a session using a hash, control (some) queries using IDs, an
 BASE URL = https://mob2217.securitasdirect.es:12010/WebService/ws.do
 ```
 
-Known supported countries: 
-* Spain (country="ES", lang="es")
-* Italy (country="IT", lang="it")
-* France (country="FR", lang="fr")
-* UK (country="GB", lang="en") (only the alarm kit on the [left](https://www.verisure.co.uk/alarms/customer-area.html))
-* Portugal (country="PT", lang="pt")
+Known supported countries:
+* Spain (Country="ES", lang="es")
+* Italy (Country="IT", lang="it")
+* France (Country="FR", lang="fr")
+* UK (Country="GB", lang="en") (only the alarm kit on the [left](https://www.verisure.co.uk/alarms/customer-area.html))
+* Portugal (Country="PT", lang="pt")
 
 ## Login
 
@@ -39,8 +39,8 @@ You should provide:
 {
     'request': 'LOGIN',
     'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]',
-    'country': '[Checked with `es` for Spain]',
-    'lang': '[Checked with `ES` for Spain]',
+    'Country': '[Checked with `ES` for Spain]',
+    'lang': '[Checked with `es` for Spain]',
     'user': '[The webpage/app login]',
     'pwd': '[The webpage/app password]'
 }
@@ -49,7 +49,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=LOGIN&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=LOGIN&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass
 ```
 
 **Success Response**
@@ -87,7 +87,7 @@ You should provide:
 {
     'request': 'MYINSTALLATION',
     'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]',
-    'country': '[Checked with `es` for Spain]',
+    'Country': '[Checked with `es` for Spain]',
     'lang': '[Checked with `ES` for Spain]',
     'user': '[The webpage/app login]',
     'pwd': '[The webpage/app password]',
@@ -98,7 +98,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=MYINSTALLATION&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=MYINSTALLATION&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass
 ```
 
 **Success Response**
@@ -156,7 +156,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -171,7 +171,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -198,7 +198,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -213,7 +213,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST2&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -246,7 +246,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -261,7 +261,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -288,7 +288,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -303,7 +303,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -336,7 +336,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -351,7 +351,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -378,7 +378,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -393,7 +393,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI2&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -426,7 +426,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -441,7 +441,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -468,7 +468,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -483,7 +483,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT2&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -516,7 +516,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -531,7 +531,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -558,7 +558,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -573,7 +573,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY2&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -606,7 +606,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -621,7 +621,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM1&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -648,7 +648,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -663,7 +663,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM2&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -694,7 +694,7 @@ You should provide:
 
 ```
 {
-  'country': '[Country]',
+  'Country': '[Country]',
   'user': '[The webpage/app login]',
   'pwd': '[The webpage/app password]',
   'lang': '[Language]',
@@ -708,7 +708,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=CLS&ID=IPH_________________________vericlient20191029123621&country=es&lang=ES&user=vericlient&pwd=veripass&hash=11111111111&numinst=
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=CLS&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&numinst=
 ```
 
 **Success Response**
