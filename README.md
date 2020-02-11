@@ -25,6 +25,20 @@ Known supported countries:
 * UK (Country="GB", lang="en") (only the alarm kit on the [left](https://www.verisure.co.uk/alarms/customer-area.html))
 * Portugal (Country="PT", lang="pt")
 
+Calls and Actions:
+
+* [Login](#login)
+* [Installation Details](#installation-details)
+* [SIM Number and INSTIBS](#sim-number-and-instibs)
+* [Get Panel Status](#get-panel-status)
+* [Arm Alarm System (inside, all sensors)](#arm-alarm-system--inside--all-sensors-)
+* [Arm Alarm System (outside, perimeter, all sensors)](#arm-alarm-system--outside--perimeter--all-sensors-)
+* [Arm Alarm Nigh/Partial Mode](#arm-alarm-nigh-partial-mode)
+* [Arm Alarm Day/Partial Mode](#arm-alarm-day-partial-mode)
+* [Disarm Alarm (everything)](#disarm-alarm--everything-)
+* [Photo Requests](#photo-requests)
+* [Logout](#logout)
+
 ## Login
 
 **Call**: `LOGIN`
