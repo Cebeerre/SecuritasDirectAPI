@@ -141,6 +141,47 @@ Example:
   </INSTALLATION>
 </PET>
 ```
+## SIM Number and INSTIBS
+
+This is usefull in order to get the SIM number. You can straight call this number as long as you're doing it from the allowed numbers to make "silent calls" and listen from the alarm panel.
+
+You need this call to get the tag value `INSTIBS`. I haven't been able to understand the meaning of this tag, but is mandatory to do photo requests from the sensors.
+
+**Call**: `SVR`
+
+**Method**: `GET`
+
+**Data constraints**
+
+You should provide:
+
+```
+{
+  'Country': '[Country]',
+  'user': '[The webpage/app login]',
+  'pwd': '[The webpage/app password]',
+  'lang': '[Language]',
+  'panel': '[This is your alarm panel, tipically SDVFAST]',
+  'numinst': '[Your installation ID, you can get this from the App/WebPage]',
+  'request': 'SVR',
+  'hash': '[The hash/token that you get back in the XML from doing the Login call]',
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+}
+```
+**Data example**
+
+```
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=SVR&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+```
+
+**Success Response**
+
+Code: 200
+Example:
+
+I've removed the response here, as it generates a huge XML with a lot of garbage.
+
+Basically, parse the response to get the values from the tags `SIM` and `INSTIBS`
 
 ## Get Panel Status
 
@@ -680,6 +721,153 @@ Example:
   <NUMINST>2423443</NUMINST>
   <BLOQ remotereqactive="1" >Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
 </PET>
+```
+
+## Photo Requests
+
+In order to make photo requests and download the pictures, you should first call `IMG1` and as the previous panel interactions, loop through `IMG2` till you get a successful response. Once confirmed, you can get the pictures calling `INF` which will return 3 pictures inside 3 XML tags encoded in BASE64.
+
+Before calling `INF`, you should call `ACT_V2` till you see an entry saying that the pictures are available. From this response, you should get the values in the tags `idsignal` and `signaltype` as you'll need them then to call `INF`.
+
+**Call**: `IMG1`
+
+**Method**: `GET`
+
+**Data constraints**
+
+You should provide:
+
+```
+{
+  'Country': '[Country]',
+  'user': '[The webpage/app login]',
+  'pwd': '[The webpage/app password]',
+  'lang': '[Language]',
+  'panel': '[This is your alarm panel, tipically SDVFAST]',
+  'numinst': '[Your installation ID, you can get this from the App/WebPage]',
+  'request': 'IMG1',
+  'idservice': '[Seems a constant, in my case is '1' got from MYINSTALLATION],
+  'instibs': '[You get this from the SVR call as mentioned previously]',
+  'device': '[ID from the device (idDev), you get this calling MYINSTALLATION]',
+  'hash': '[The hash/token that you get back in the XML from doing the Login call]',
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+}
+```
+
+**Data example**
+
+```
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=IMG1&idservice=1&instibs=34342342&device=1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+```
+
+**Success Response**
+
+Code: 200
+Example:
+
+```
+text<?xml version='1.0' encoding='UTF-8'?>
+text<PET>
+text  <RES>OK</RES>
+text  <STATUS>0</STATUS>
+text  <MSG>La secuencia de imágenes ha sido tomada. En unos minutos podrás visualizarlas desde tu web de cliente, en tu correo electrónico o en la aplicación My Verisure.</MSG>
+text  <BLOQ remotereqactive="1">Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
+text</PET>
+```
+
+**Call**: `IMG2`
+
+**Method**: `GET`
+
+**Data constraints**
+
+You should provide:
+
+```
+{
+  'Country': '[Country]',
+  'user': '[The webpage/app login]',
+  'pwd': '[The webpage/app password]',
+  'lang': '[Language]',
+  'panel': '[This is your alarm panel, tipically SDVFAST]',
+  'numinst': '[Your installation ID, you can get this from the App/WebPage]',
+  'request': 'IMG2',
+  'idservice': '[Seems a constant, in my case is '1' got from MYINSTALLATION],
+  'instibs': '[You get this from the SVR call as mentioned previously]',
+  'device': '[ID from the device (idDev), you get this calling MYINSTALLATION]',
+  'hash': '[The hash/token that you get back in the XML from doing the Login call]',
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+}
+```
+
+**Data example**
+
+```
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=IMG2&idservice=1&instibs=34342342&device=1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+```
+
+**Success Response**
+
+Code: 200
+Example:
+
+```
+<?xml version='1.0' encoding='UTF-8'?>
+<PET>
+  <RES>OK</RES>
+  <STATUS>0</STATUS>
+  <MSG>La secuencia de imágenes ha sido tomada. En unos minutos podrás visualizarlas desde tu web de cliente, en tu correo electrónico o en la aplicación My Verisure.</MSG>
+  <BLOQ remotereqactive="1">Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
+</PET>
+```
+
+**Call**: `INF`
+
+**Method**: `GET`
+
+**Data constraints**
+
+You should provide:
+
+```
+{
+  'Country': '[Country]',
+  'user': '[The webpage/app login]',
+  'pwd': '[The webpage/app password]',
+  'lang': '[Language]',
+  'panel': '[This is your alarm panel, tipically SDVFAST]',
+  'numinst': '[Your installation ID, you can get this from the App/WebPage]',
+  'request': 'INF',
+  'idsignal': '[You can get this from ACT_V2 after a successful IMG2],
+  'signaltype': '[You can get this from ACT_V2 after a successful IMG2]',
+  'hash': '[The hash/token that you get back in the XML from doing the Login call]',
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+}
+```
+**Data example**
+
+```
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=INF&idsignal=1234&signaltype=1234&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+```
+
+**Success Response**
+
+Code: 200
+Example:
+
+```
+text<?xml version='1.0' encoding='UTF-8'?>
+text<PET>
+text  <RES>OK</RES>
+text  <DEVICES numdevices="1">
+text    <DEVICE id="0" code="6" name="Cuarto de limpieza" numimg="3">
+text      <IMG id="1">BASE64</IMG>
+text      <IMG id="2">BASE64</IMG>
+text      <IMG id="3">BASE64</IMG>
+text    </DEVICE>
+text  </DEVICES>
+text  <BLOQ remotereqactive="1">Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
+text</PET>
 ```
 
 ## Logout
