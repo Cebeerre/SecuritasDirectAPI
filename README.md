@@ -856,18 +856,18 @@ Code: 200
 Example:
 
 ```
-text<?xml version='1.0' encoding='UTF-8'?>
-text<PET>
-text  <RES>OK</RES>
-text  <DEVICES numdevices="1">
-text    <DEVICE id="0" code="6" name="Cuarto de limpieza" numimg="3">
-text      <IMG id="1">BASE64</IMG>
-text      <IMG id="2">BASE64</IMG>
-text      <IMG id="3">BASE64</IMG>
-text    </DEVICE>
-text  </DEVICES>
-text  <BLOQ remotereqactive="1">Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
-text</PET>
+<?xml version='1.0' encoding='UTF-8'?>
+<PET>
+  <RES>OK</RES>
+  <DEVICES numdevices="1">
+    <DEVICE id="0" code="6" name="Cuarto de limpieza" numimg="3">
+      <IMG id="1">BASE64</IMG>
+      <IMG id="2">BASE64</IMG>
+      <IMG id="3">BASE64</IMG>
+    </DEVICE>
+  </DEVICES>
+  <BLOQ remotereqactive="1">Estamos mejorando nuestros servicios. Por favor intentelo de nuevo mas tarde. Gracias por confiar en Securitas Direct</BLOQ>
+</PET>
 ```
 
 ## Logout
