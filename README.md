@@ -2,7 +2,7 @@
 
 Placeholder to document the Verisure Europe (Securitas Direct) Mobile app API Endpoint.
 
-**_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES. The information here and online is for educational and resource purposes only and therefore I do not endorse or condone any inappropriate use of it.
+**_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES. The information here and online is for educational and resource purposes only and therefore the developers do not endorse or condone any inappropriate use of it, and take no legal responsibility for the functionality or security of your alarms and devices.
 
 Special thanks to the [mitmproxy](https://github.com/mitmproxy/mitmproxy) team as all the reverse engineering work required to document this API was done with this great opensource tool.
 
