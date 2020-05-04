@@ -8,6 +8,7 @@ Special thanks to the [mitmproxy](https://github.com/mitmproxy/mitmproxy) team a
 
 Known projects:
 
+* [Command line client](https://github.com/Cebeerre/VerisureAPIClient)
 * [Home Assistant Component](https://github.com/segalion/securitasdirect)
 * [WEMO/Belkin Emulation](https://github.com/Cebeerre/VerisureEchoDevice)
 * [WIP Homebridge integration](https://github.com/ptz0n/node-verisure/pull/41)
