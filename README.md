@@ -1,6 +1,9 @@
 # General
 
-Placeholder to document the Verisure Europe (Securitas Direct) Mobile app API Endpoint.
+Placeholder to document the Securitas Direct API Endpoint used by the mobile apps below:
+
+- [Android App](https://play.google.com/store/apps/details?id=com.securitasdirect.android.mycontrol&hl=en&gl=US)
+- [IOS App](https://play.google.com/store/apps/details?id=com.securitasdirect.android.mycontrol&hl=en&gl=US)
 
 **_NOTE:_** THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES. The information here and online is for educational and resource purposes only and therefore the developers do not endorse or condone any inappropriate use of it, and take no legal responsibility for the functionality or security of your alarms and devices.
 
@@ -14,7 +17,7 @@ Known projects:
 * [WIP Homebridge integration](https://github.com/ptz0n/node-verisure/pull/41)
 * [Jeedom Plugin](https://github.com/Xav-74/verisure)
 
-Verisure does not really use a REST API, it's more a web application that expects variables in a url encoded format, and returns XML documents.
+Securitas Direct does not really use a REST API, it's more a web application that expects variables in a url encoded format, and returns XML documents.
 
 You should maintain a session using a hash, control (some) queries using IDs, and control the execution in the server querying the log on the endpoint periodically for some calls.
 
@@ -56,7 +59,7 @@ You should provide:
 ```
 {
     'request': 'LOGIN',
-    'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]',
+    'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
     'Country': '[Checked with `ES` for Spain]',
     'lang': '[Checked with `es` for Spain]',
     'user': '[The webpage/app login]',
@@ -67,7 +70,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=LOGIN&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=LOGIN&ID=AND_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass
 ```
 
 **Success Response**
@@ -104,7 +107,7 @@ You should provide:
 ```
 {
     'request': 'MYINSTALLATION',
-    'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]',
+    'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
     'Country': '[Checked with `es` for Spain]',
     'lang': '[Checked with `ES` for Spain]',
     'user': '[The webpage/app login]',
@@ -116,7 +119,7 @@ You should provide:
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=MYINSTALLATION&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=MYINSTALLATION&ID=AND_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass
 ```
 
 **Success Response**
@@ -183,13 +186,13 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'SVR',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]'
 }
 ```
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=SVR&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=SVR&ID=AND_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -223,14 +226,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'EST1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]'
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -265,14 +269,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'EST1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=EST2&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -313,14 +318,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'ARM1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -355,14 +361,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'ARM2',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARM1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -403,14 +410,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'PERI1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI1&ID=AND_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -445,14 +453,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'PERI2',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=PERI2&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -493,14 +502,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'ARMNIGHT1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -535,14 +545,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'ARMNIGHT2',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMNIGHT2&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -583,14 +594,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'ARMDAY1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -625,14 +637,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'ARMDAY2',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=ARMDAY2&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -673,14 +686,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'DARM1',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -715,14 +729,15 @@ You should provide:
   'numinst': '[Your installation ID, you can get this from the App/WebPage]',
   'request': 'DARM2',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM2&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=DARM2&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -768,14 +783,15 @@ You should provide:
   'instibs': '[You get this from the SVR call as mentioned previously]',
   'device': '[ID from the device (idDev), you get this calling MYINSTALLATION]',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=IMG1&idservice=1&instibs=34342342&device=1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=IMG1&idservice=1&instibs=34342342&device=1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -814,14 +830,15 @@ You should provide:
   'instibs': '[You get this from the SVR call as mentioned previously]',
   'device': '[ID from the device (idDev), you get this calling MYINSTALLATION]',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=IMG2&idservice=1&instibs=34342342&device=1&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=IMG2&idservice=1&instibs=34342342&device=1&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -859,13 +876,14 @@ You should provide:
   'idsignal': '[You can get this from ACT_V2 after a successful IMG2],
   'signaltype': '[You can get this from ACT_V2 after a successful IMG2]',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]',
+  'callby': '[same string used in the device type plus android version: AND_61]
 }
 ```
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=INF&idsignal=1234&signaltype=1234&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=INF&idsignal=1234&signaltype=1234&ID=AND_________________________vericlient20191029123621&callby=AND_61&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&panel=SDVFAST&numinst=2423443
 ```
 
 **Success Response**
@@ -907,14 +925,14 @@ You should provide:
   'numinst': '(null)',
   'request': 'CLS',
   'hash': '[The hash/token that you get back in the XML from doing the Login call]',
-  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: IPH_________________________vericlient20191029123621]'
+  'ID': '[Concatenated string with the device type, the username and a time token, should persist along all the session: AND_________________________vericlient20191029123621]'
 }
 ```
 
 **Data example**
 
 ```
-https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=CLS&ID=IPH_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&numinst=
+https://mob2217.securitasdirect.es:12010/WebService/ws.do?request=CLS&ID=AND_________________________vericlient20191029123621&Country=ES&lang=es&user=vericlient&pwd=veripass&hash=11111111111&numinst=
 ```
 
 **Success Response**
