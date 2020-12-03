@@ -16,6 +16,7 @@ Known projects:
 * [WEMO/Belkin Emulation](https://github.com/Cebeerre/VerisureEchoDevice)
 * [WIP Homebridge integration](https://github.com/ptz0n/node-verisure/pull/41)
 * [Jeedom Plugin](https://github.com/Xav-74/verisure)
+* [PHP Fork](https://github.com/kdesroches89/verisure-api-php)
 
 Securitas Direct does not really use a REST API, it's more a web application that expects variables in a url encoded format, and returns XML documents.
 
