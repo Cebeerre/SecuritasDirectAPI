@@ -1,3 +1,6 @@
+> **⚠️ This repository is archived and no longer maintained.**  
+> The code remains available in read-only mode for reference purposes.
+
 # General
 
 Placeholder to document the Securitas Direct API Endpoint used by the mobile apps below:
